@@ -1,4 +1,4 @@
-FROM ubuntu:18.05
+FROM ubuntu
 
 ENV TZ=America/New_York
 
