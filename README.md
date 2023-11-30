@@ -4,6 +4,7 @@ This is inspired by https://hub.docker.com/r/haugene/transmission-openvpn
 
 Documentation for variables below can be found in the link below. https://haugene.github.io/docker-transmission-openvpn/
 
+```bash
 docker run --name vpn --cap-add=NET_ADMIN -d
 --restart unless-stopped
 -v /etc/localtime:/etc/localtime:ro
@@ -16,9 +17,11 @@ docker run --name vpn --cap-add=NET_ADMIN -d
 -p 51413:51413
 -p 51413:51413/udp
 -it simplelnx/fastestvpn
+```
 
 Docker-Compose 2.1 -
 
+```bash
 vpn: 
     cap_add: 
       - NET_ADMIN
@@ -45,9 +48,11 @@ vpn:
     volumes: 
       - "/etc/localtime:/etc/localtime:ro"
 version: "2.1"
+```
 
 Once created, setup transmission using any existing containers. example below.
 
+```
 docker run -d
 --name=transmission
 --net container:vpn
@@ -59,5 +64,5 @@ docker run -d
 -v your/path:/watch
 --restart unless-stopped
 linuxserver/transmission
-
+```
 This is setup for using Transmission. If you are using other torrent clients, download the code from Github and build after adding the ports used by the client in expose. Remember to add them while creating the docker container.
