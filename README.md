@@ -2,7 +2,7 @@ Simple docker image for fastestvpn.com provider. Used for linking transmission a
 
 This is inspired by https://hub.docker.com/r/haugene/transmission-openvpn
 
-Documentation for variables below can be found in the link below. https://haugene.github.io/docker-transmission-openvpn/
+Documentation for variables below can be found in the link - https://haugene.github.io/docker-transmission-openvpn/
 
 ```bash
 docker run --name vpn --cap-add=NET_ADMIN -d
